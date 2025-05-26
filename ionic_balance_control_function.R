@@ -60,14 +60,16 @@ ionic_balance_control<-function(pH, ALK, Ca, Cl, K, Mg, Na, NH4, NO3, NO2, SO4, 
   I.Balance=100*(C.sum-A.sum)/(C.sum+A.sum)
   
   # In order not to lose sites that do not have NO2 but do have NO3, we will do the following.
-  NO3_cond=NO3*63.6
-  NO2_cond=NO2*71.8
+  NO3_cond=NO3*(71.42/1.11)
+  NO2_cond=NO2*(71.8/1.11)
   NO3NO2_cond=rowSums(cbind(NO3_cond, NO2_cond), na.rm = TRUE)
   NO3NO2_cond=if_else(is.na(NO2) & is.na(NO3),NA, NO3NO2_cond)
   NO3NO2_cond=if_else(is.na(NO3),NA, NO3NO2_cond)
   
-  # Expected conductivity calculation (Ref. Jordi!!!!!)
-  cond.est=(H*315.1+NH4*67 + Ca*54.3 + Mg*48.6 + Na*45.9 + K*67 + ALK*39.4 + SO4*71.2 + NO3NO2_cond + Cl*68)/1000
+  # Expected conductivity calculation. Ionic molal conductivity extracted from Haynes (2014)*
+  # * Haynes, W. M., Ed. (2014). CRC Handbook of chemistry and physics. Boca Raton, Fl, CRC Press.
+  cond.est=(H*(349.65/1.11)+NH4*(73.5/1.11) + Ca*(59.47/1.11) + Mg*(53/1.11) + Na*(50.08/1.11) + K*(73.48/1.11) + 
+              ALK*(44.5/1.11) + SO4*(80/1.11) + NO3NO2_cond + Cl*(76.31/1.11))/1000
   
   # Ionic strength
   ionic.strength=((H+NH4 + Ca*2 + Mg*2 + Na + K + ALK + SO4*2 + NO3NO2 + Cl)/1000/2000)
