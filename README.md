@@ -9,21 +9,21 @@ and a third flag ('no ionic balance data'), when required information is missing
 
 ## Arguments
 
-pH = pH  
-ALK = Alkalinity in µeq/l  
-Ca = Calcium in mg/l or µeq/l  
-Cl = Chloride in mg/l or µeq/l  
-K = Potasium in mg/l or µeq/l  
-Mg = Magnessium in mg/l or µeq/l  
-Na = Sodium in mg/l or µeq/l  
-NH4 = Ammonium in mg/l or µeq/l  
-NO3 = Nitrate in mg/l or µeq/l  
-NO2 = Nitrite in mg/l or µeq/l  
-SO4 = Sulfate in mg/l or µeq/l  
-Cond = measured conductivity in µS/cm (at 20ºC)  
-IB_thres = Ionic balance threshold. Samples with a ionic balance less than or equal to this threshold (in absolute value) will be classified as 'high-quality', otherwise, they will be classified as 'low-quality'  
-ALK.Dif_thres (optional) = Percentual difference between estimated and measured alkalinity threshold. If provided, samples with a difference (ALK.Dif) greater than or equal to this threshold (in absolute value) will be reclassified from 'high-quality' to 'low-quality'.If not specified, this check is skipped.  
-units_ueq = TRUE (default, µeq/l) or FALSE (mg/l)  
+**pH** = pH  
+**ALK** = Alkalinity in µeq/l  
+**Ca** = Calcium in mg/l or µeq/l  
+**Cl** = Chloride in mg/l or µeq/l  
+**K** = Potasium in mg/l or µeq/l  
+**Mg** = Magnessium in mg/l or µeq/l  
+**Na** = Sodium in mg/l or µeq/l  
+**NH4** = Ammonium in mg/l or µeq/l  
+**NO3** = Nitrate in mg/l or µeq/l  
+**NO2** = Nitrite in mg/l or µeq/l  
+**SO4** = Sulfate in mg/l or µeq/l  
+**Cond** = measured conductivity in µS/cm (at 20ºC)  
+**IB_thres** = Ionic balance threshold. Samples with a ionic balance less than or equal to this threshold (in absolute value) will be classified as `'high-quality'`, otherwise, they will be classified as `'low-quality'`  
+**ALK.Dif_thres** *(optional)* = Percentual difference between estimated and measured alkalinity threshold. If provided, samples with a difference (ALK.Dif) greater than or equal to this threshold (in absolute value) will be reclassified from `'high-quality'` to `'low-quality'`.If not specified, this check is skipped.  
+**units_ueq** = `TRUE` (default, µeq/l) or `FALSE` (mg/l)  
 
 ## Units
 
