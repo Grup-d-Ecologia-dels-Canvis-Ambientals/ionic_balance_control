@@ -2,10 +2,10 @@
 
 ## Description 
 
-This repository contains a function created for water chemical analysis quality assessment, based on ionic balance to detect potentially inaccurate measurements.
+This repository contains a function created for water chemical analysis quality assessment based on ionic balance to detect potentially inaccurate measurements.
 
-The function assigns two quality flags according to a ionic balance threshold determined by a user-defined parameter ('high-quality' and 'low-quality') 
-and a third flag ('no ionic balance data'), when required information is missing.
+The function assigns two quality flags according to an ionic balance threshold determined by a user-defined parameter ('high-quality' and 'low-quality') 
+and a third flag ('no ionic balance data') when required information is missing.
 
 ## Arguments
 
@@ -14,22 +14,22 @@ and a third flag ('no ionic balance data'), when required information is missing
 **Ca** = Calcium in mg/l or µeq/l  
 **Cl** = Chloride in mg/l or µeq/l  
 **K** = Potasium in mg/l or µeq/l  
-**Mg** = Magnessium in mg/l or µeq/l  
+**Mg** = Magnesium in mg/l or µeq/l  
 **Na** = Sodium in mg/l or µeq/l  
 **NH4** = Ammonium in mg/l or µeq/l  
 **NO3** = Nitrate in mg/l or µeq/l  
 **NO2** = Nitrite in mg/l or µeq/l  
 **SO4** = Sulfate in mg/l or µeq/l  
-**Cond** = measured conductivity in µS/cm (at 20ºC)  
-**IB_thres** = Ionic balance threshold. Samples with a ionic balance less than or equal to this threshold (in absolute value) will be classified as `'high-quality'`, otherwise, they will be classified as `'low-quality'`  
-**ALK.Dif_thres** *(optional)* = Percentual difference between estimated and measured alkalinity threshold. If provided, samples with a difference (ALK.Dif) greater than or equal to this threshold (in absolute value) will be reclassified from `'high-quality'` to `'low-quality'`.If not specified, this check is skipped.  
+**Cond** = measured conductivity in µS/cm referenced to 20ºC  
+**IB_thres** = Ionic balance threshold. Samples with an ionic balance less than or equal to this threshold (in absolute value) will be classified as `'high-quality'`. Otherwise, they will be classified as `'low-quality'`  
+**ALK.Dif_thres** *(optional)* = Percentual difference between estimated and measured alkalinity threshold. If provided, samples with a difference (ALK.Dif) greater than or equal to this threshold (in absolute value) will be reclassified from `'high-quality'` to `'low-quality'`. If not specified, this check is skipped.  
 **units_ueq** = `TRUE` (default, µeq/l) or `FALSE` (mg/l)  
 
 ## Units
 
-Major anions (Cl, SO4, NO3), major cations (Na, K, Ca, Mg) ammonium and nitrites can be expressed either in µeq/L or in mg/L, but all must be in the same unit.
+Major anions (Cl, SO4, NO3), major cations (Na, K, Ca, Mg), ammonium, and nitrite can be expressed either in µeq/L or in mg/L, but all must be in the same unit.
 "If 'units_ueq = TRUE' (default), all concentrations must be in µeq/L. If FALSE, they must be in mg/L."
-Alkalinity and conductivity must be in µeq/l and µS/cm, respectively
+Alkalinity and conductivity must be in µeq/l and µS/cm, respectively.
 
 ## Result
 
